@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import AdsbAdapter from '../../domain/adapter/openSkyNetworkdAdapter.js';
+import {fetchPlots} from '../../domain/adapter/openSkyNetworkdAdapter.js';
 
 class RadarSettings extends Component {
-  constructor(props) {
-    super(props);
-    this.adapter = new AdsbAdapter();
+  constructor() {
+    super();
+
     this.fetchData = this.fetchData.bind(this);
   }
 
@@ -18,7 +18,7 @@ class RadarSettings extends Component {
   }
 
   fetchData(){
-    this.adapter.fetchPlots();
+    fetchPlots();
   }
 }
 
