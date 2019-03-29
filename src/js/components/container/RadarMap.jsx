@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Map, TileLayer } from 'react-leaflet';
 
 import { store } from '../../store.js';
-import { fetchPlots } from '../../domain/adapter/openSkyNetworkdAdapter.js';
+import { fetchPlots } from '../../domain/adapter/radarApiAdapter.js';
 import AirplaneMarkers from '../presentational/AirplaneMarker.jsx';
 import AirplaneHistoricalPaths from '../presentational/AirplaneHistoricalPaths.jsx';
 
@@ -29,7 +29,6 @@ class RadarMap extends Component {
   
   componentDidMount(){
     fetchPlots();
-    setInterval(fetchPlots, 2000);
   }
 }
 

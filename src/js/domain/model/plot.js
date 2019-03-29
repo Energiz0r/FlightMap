@@ -1,22 +1,22 @@
 class Plot {
   constructor(data){
-    this.icao24 = data[0];
-    this.callsign = data[1];
-    this.origin_country = data[2];
-    this.time_position = data[3];
-    this.last_contact = data[4];
-    this.longitude = data[5];
-    this.latitude = data[6]; 
-    this.baro_altitude = data[7];
-    this.on_ground = data[8];
-    this.velocity = data[9];
-    this.true_track = data[10];
-    this.vertical_rate = data[11];
-    this.sensors = data[12];
-    this.geo_altitude = data[13];
-    this.squawk = data[14];
-    this.spi = data[15];
-    this.position_source = data[16];
+    this.icao24 = data.icao24;
+    this.callsign = data.callsign;
+    this.origin_country = data.originCountry;
+    this.time_position = data.timePosition;
+    this.last_contact = data.lastContact;
+    this.longitude = data.longitude;
+    this.latitude = data.latitude; 
+    this.baro_altitude = data.baroAltitude;
+    this.on_ground = data.onGround;
+    this.velocity = data.velocity;
+    this.true_track = data.trueTrack;
+    this.vertical_rate = data.verticalRate;
+    this.sensors = data.sensors;
+    this.geo_altitude = data.geoAltitude;
+    this.squawk = data.squawk;
+    this.spi = data.spi;
+    this.position_source = data.positionSource;
   }
 }
 

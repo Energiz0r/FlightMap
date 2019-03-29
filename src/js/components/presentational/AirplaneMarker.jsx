@@ -9,7 +9,7 @@ class AirplaneMarkers extends Component {
     return (
       this.props.units.map((unit, i) => {
         let lastPlot = unit.plots[unit.plots.length-1];
-        return <Marker icon={getPlaneIcon(lastPlot.true_track)} key={i} position={[lastPlot.latitude, lastPlot.longitude]}>
+        return <Marker icon={getPlaneIcon(lastPlot.trueTrack)} key={i} position={[lastPlot.latitude, lastPlot.longitude]}>
           <Popup>
             <AirplaneInfoPopup plane={unit} />
           </Popup>

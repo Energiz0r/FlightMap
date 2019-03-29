@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {fetchPlots} from '../../domain/adapter/openSkyNetworkdAdapter.js';
 
 class RadarSettings extends Component {
   constructor() {
@@ -12,13 +11,8 @@ class RadarSettings extends Component {
     return (
       <div>
         <h2>Settings</h2>
-        <button onClick={this.fetchData}>click to fetch more new data</button>
       </div>
     );
-  }
-
-  fetchData(){
-    fetchPlots();
   }
 }
 

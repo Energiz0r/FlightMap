@@ -2,8 +2,10 @@ import '../style/app.css';
 import 'leaflet/dist/leaflet.css';
 
 import React, { Component } from 'react';
-import RadarMap from './components/container/RadarMap.jsx';
 import L from 'leaflet';
+
+import RadarMap from './components/container/RadarMap.jsx';
+import { initConnection } from './domain/adapter/signalRClientHub.js';
 
 //Fix marker when react+webpack
 delete L.Icon.Default.prototype._getIconUrl;
@@ -20,6 +22,10 @@ class App extends Component {
         <RadarMap />
       </div>
     );
+  }
+
+  componentDidMount(){
+    initConnection();
   }
 }
 
