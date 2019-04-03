@@ -14,14 +14,18 @@ class RadarMap extends Component {
       units: []
     };
 
-    store.subscribe(() => this.setState({units: store.getState().units}));
+    store.subscribe(() => 
+    {
+      let state = store.getState();
+      this.setState({units: state.units});
+    });
   }
 
   render(){
     return (
       <Map center={[65.5, 13]} zoom={5}>
         <TileLayer url='http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'/>
-        <AirplaneMarkers units={this.state.units} />
+        <AirplaneMarkers units={this.state.units}/>
         <AirplaneHistoricalPaths units={this.state.units}/>
       </Map>
     );

@@ -18,3 +18,16 @@ export async function fetchPlots(){
 
   store.dispatch(setUnits(units));
 }
+
+export async function fetchDetailedPlane(id){
+  const response = await fetch(`https://localhost:5001/api/plane/${id}`);
+  const data = await response.json();
+  
+  let newUnit = new Unit(data.icao24);
+  data.plots.forEach((plot) => {
+    newUnit.addPlot(new Plot(plot));
+  });
+  
+  return newUnit;
+}
+
